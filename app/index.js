@@ -8,7 +8,7 @@ function route() {
     );
 
     if (!route) {
-        route = routes.hello;
+        route = routes.episodes;
     }
 
     route.init();
