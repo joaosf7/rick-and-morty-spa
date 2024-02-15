@@ -1,0 +1,60 @@
+body {
+    font-family: "Rock Salt", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #050A30;
+    align-items: center;
+}
+
+.navbar{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 400px;
+}
+#navbar-button {
+    margin: 0px;
+    border: 0;
+    width: 58px;
+    height: 44px;
+    background-image: url("./app/assets/images/navbarButton.png");
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: cover;
+}
+
+#navbar-title {
+    max-width: 250px;
+    color: #32CD32;
+    font-weight: bolder;
+    text-align: center;
+}
+
+#dropdown-list {
+    background-color: #1E1E1E;
+}
+
+.dropdown-item{
+    color: #32CD32;
+}
+
+#github-logo {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+#footer {
+    color: #A9A9A9;
+    align-self: flex-start;
+    margin-left: 30px;
+}
+
+#container {
+    width: 85vw;
+    height: 80vh;
+}
