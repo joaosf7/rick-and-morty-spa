@@ -11,7 +11,7 @@ export default function render(){
                     <li><a class="dropdown-item" href="#spots">Spots</a></li>
                 </ul>
             </div>
-            <h3 id='navbar-title'>Rick and Morty Rabit Hole</h3>
+            <h3 id='navbar-title'>Rick and Morty Rabbit Hole</h3>
     </nav>`
     )
 }

@@ -8,6 +8,7 @@ body {
     flex-direction: column;
     background-color: #050A30;
     align-items: center;
+    text-align: center;
 }
 
 .navbar{
@@ -44,7 +45,7 @@ body {
 }
 
 #github-logo {
-    width: 100px;
+    width: 50px;
     margin-bottom: 10px;
 }
 
@@ -52,9 +53,108 @@ body {
     color: #A9A9A9;
     align-self: flex-start;
     margin-left: 30px;
+    font-size: smaller;
 }
 
 #container {
-    width: 85vw;
+    width: 90vw;
     height: 80vh;
+}
+
+#episode-list-box {
+    border: #FF69B4;
+    border: 1px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    align-items: center;
+    justify-content: space-around;
+    max-height: 47vh;
+}
+
+.title {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #FF69B4;
+}
+
+.episode-box {
+    max-width: 100px;
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content:baseline;
+    align-items:center;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+#episode-list-image {
+    margin: 0;
+    padding: 0;
+    width: 60px;
+}
+
+#episode-list-name {
+    margin-top: 10px;
+    height: 55px;
+    color: #FFFF00;
+}
+
+.episode-list-detail {
+    text-align:center;
+    color: #FFB6C1;
+    font-size: smaller;
+}
+
+#selected-episode-box {
+    max-height: 50vh;
+}
+
+#selected-episode-title {
+    margin-top: 30px;
+    color:#FFFF00;
+}
+
+#selected-episode-subtitle {
+    margin-top: 15px;
+    color: #FF69B4;
+}
+
+#staring-title {
+    margin-top: 40px;
+    color:#32CD32;
+}
+
+#selected-episode-character-name {
+    color:#FF69B4;
+    align-self: flex-end;
+    height: 70px;
+}
+
+#selected-episode-characters-box {
+    display: flex;
+    overflow:auto;
+    height: 300px;
+    align-items: center;
+}
+
+#selected-episode-character-box {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    margin-right: 30px;
+}
+
+#selected-episode-character-image{
+    width: 150px;
+}
+
+.search-input{
+    margin-top: 37px;
+    border-radius: 20px;
+    border-color: #FF69B4;
+    outline:none;
+    background-color: #1E1E1E;
+    color: #32CD32;
 }
