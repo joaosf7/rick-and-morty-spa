@@ -9,6 +9,7 @@ body {
     background-color: #050A30;
     align-items: center;
     text-align: center;
+    justify-content: space-between;
 }
 
 .navbar{
@@ -57,11 +58,13 @@ body {
 }
 
 #container {
-    width: 90vw;
-    height: 80vh;
+    max-width: 85vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-#episode-list-box {
+#episode-list-box{
     border: #FF69B4;
     border: 1px;
     display: flex;
@@ -78,7 +81,7 @@ body {
     color: #FF69B4;
 }
 
-.episode-box {
+.episode-box, .character-box{
     max-width: 100px;
     min-width: 100px;
     display: flex;
@@ -88,34 +91,35 @@ body {
     margin-bottom: 20px;
     cursor: pointer;
 }
-#episode-list-image {
+#episode-list-image, #character-list-image {
     margin: 0;
     padding: 0;
     width: 60px;
+    height:fit-content;
 }
 
-#episode-list-name {
+#episode-list-name, #character-list-name{
     margin-top: 10px;
     height: 55px;
     color: #FFFF00;
 }
 
-.episode-list-detail {
+.episode-list-detail, .character-list-detail {
     text-align:center;
     color: #FFB6C1;
     font-size: smaller;
 }
 
-#selected-episode-box {
+#selected-episode-box{
     max-height: 50vh;
 }
 
-#selected-episode-title {
+#selected-episode-title, #selected-char-name{
     margin-top: 30px;
     color:#FFFF00;
 }
 
-#selected-episode-subtitle {
+#selected-episode-subtitle, .selected-char-info {
     margin-top: 15px;
     color: #FF69B4;
 }
@@ -125,25 +129,26 @@ body {
     color:#32CD32;
 }
 
-#selected-episode-character-name {
+#selected-episode-character-name, #selected-character-episode-name {
     color:#FF69B4;
     align-self: flex-end;
     height: 70px;
 }
 
-#selected-episode-characters-box {
+#selected-episode-characters-box{
     display: flex;
     overflow:auto;
     height: 300px;
     align-items: center;
 }
 
-#selected-episode-character-box {
+#selected-episode-character-box{
     display: flex;
     flex-direction: column;
     align-items:center;
     justify-content: center;
     margin-right: 30px;
+    cursor: pointer;
 }
 
 #selected-episode-character-image{
@@ -151,10 +156,100 @@ body {
 }
 
 .search-input{
+   border-style: solid;
+    margin-top: 20px; /* Increase margin-top to create more space */
+    border-radius: 20px;
+    border-color: #FF69B4;
+    outline: none;
+    background-color: #1E1E1E;
+    color: #32CD32;
+    width: 300px;
+    align-self: center;
+}
+
+#selected-character-episode-image {
+    width: 80px;
+}
+
+#selected-char-image {
+    width: 300px;
+}
+
+#selected-char-episodes-box {
+    display: flex;
+    overflow:auto;
+    height: 250px;
+    width: 80vw;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#search-chars{
     margin-top: 37px;
+    margin-bottom: 20px;
     border-radius: 20px;
     border-color: #FF69B4;
     outline:none;
     background-color: #1E1E1E;
     color: #32CD32;
+    width: 300px;
+    align-self: center;
+}
+
+#character-list-box{
+    margin-bottom: 20px; /* Increase margin-bottom to create more space */
+    border: #FF69B4;
+    border-style: solid;
+    border: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    align-items: center;
+    justify-content: space-around;
+    max-height: 47vh;
+}
+
+#selected-char-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+}
+
+#selected-char-episode-box{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+    align-items: center;
+    cursor: pointer;
+}
+.loading {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--blue);
+    display: flex;
+    flex-direction: column;
+}
+
+.loading-img {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -150px;
+}
+
+.rotate {
+    animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
 }

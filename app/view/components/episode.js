@@ -1,3 +1,5 @@
+import { changeId } from "../../navigation.js"
+
 export default function render(episodes, selectedEpisode, characters){
     let selectedEpisodeBox
     console.log('episodes:', episodes)
@@ -9,16 +11,16 @@ export default function render(episodes, selectedEpisode, characters){
         <p id='selected-episode-subtitle'>${selectedEpisode.episode}</p>
         <h4 id='staring-title'>Staring:</h4>
     `)
-    characters.forEach(character => selectedEpisodeCharactersBox.append(`
-            <card id='selected-episode-character-box'>
-                <h2 id='selected-episode-character-name'>${character.name}</h2>
-                <img
-                    id='selected-episode-character-image'
-                    src=${character.image}
-                    alt='character image'
-                />
-            </card>
-    `))
+    characters.forEach(character => {
+        let card = $('<card id="selected-episode-character-box">');
+        let characterName = $(`<h2 id="selected-episode-character-name">${character.name}</h2>`);
+        let characterImage = $('<img id="selected-episode-character-image" src="' + character.image + '" alt="character image"/>');
+
+        card.click(() => changeId("characters", character.id));
+        card.append(characterName, characterImage);
+        selectedEpisodeCharactersBox.append(card);
+    });
+
     console.log(selectedEpisodeCharactersBox)
 
     selectedEpisodeBox.append(selectedEpisodeCharactersBox)

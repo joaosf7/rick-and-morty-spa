@@ -59,6 +59,14 @@ export async function getCharactersByEpId(epId){
   return allChars.filter(character => selectedCharsUrls.includes(character.url))
 }
 
+export async function getEpisodesByCharId(charId){
+  let allChars = await getAllCharacters()
+  let allEpisodes = await getAllEpisodes()
+  let selectedEpisodesUrls = allChars.filter(character => character.id === charId)[0].episode
+  
+  return allEpisodes.filter(episode => selectedEpisodesUrls.includes(episode.url))
+}
+
 export async function getEpisodes(param = ''){
   if(param === '')
     return getAllEpisodes()
@@ -67,6 +75,18 @@ export async function getEpisodes(param = ''){
   return episodes.results
 }
 
+export async function getCharacters(param = ''){
+  if(param === '')
+    return getAllCharacters()
+  const episodes = await fetch(`${API_URL}/character?${param}`).then(response => response.json())
+  
+  return episodes.results
+}
+
 export async function getEpisodeById(id){
   return await fetch(`${API_URL}/episode/${id}`).then(response => response.json())
+}
+
+export async function getCharacterById(id){
+  return await fetch(`${API_URL}/character/${id}`).then(response => response.json())
 }

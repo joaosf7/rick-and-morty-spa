@@ -3,7 +3,7 @@ export function hasParameters(){
 }
 
 export function getParameters(){
-    return window.location.hash.slice(window.location.hash.indexOf('?'), window.location.hash.length)
+    return window.location.hash.split('?')[1]
 }
 
 export function changeId(str, id){

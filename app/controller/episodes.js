@@ -1,10 +1,10 @@
 import { getEpisodes, getCharactersByEpId, getEpisodeById } from "../service/api.js"
 import episodesView from '../view/pages/episodes.js'
 import navbarView from '../view/components/navbar.js'
+import loadingView from '../view/components/loading.js'
 
 export default async function init(){
-    navbarView()
-
+    $('#container').empty().append(loadingView())
     let parameters = window.location.hash.split('?')[1]
 
     const hash = window.location.hash
@@ -18,9 +18,14 @@ export default async function init(){
     console.log('epNumber', epNumber)
     console.log('parameters', parameters)
 
+    let selectedEpisode
+    let characters
     if(epNumber && typeof epNumber === 'number'){
-        episodesView(episodes, await getEpisodeById(epNumber), await getCharactersByEpId(epNumber))
+        selectedEpisode = await getEpisodeById(epNumber)
+        characters = await getCharactersByEpId(epNumber)
     }
-    else
-        episodesView(episodes)
+
+    navbarView()
+    characters ? episodesView(episodes, selectedEpisode, characters) : episodesView(episodes)
+
 }
